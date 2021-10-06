@@ -25,9 +25,33 @@ namespace PrimeNumbersAgain
 
         static int FindNthPrime(int n)
         {
-            return 0;
+            int count = 1;
+            for (int i = 0; i < n; count++)
+            {
+                if (primeNum(count) == true)
+                {
+                    i++;
+                }
+            }
+            return (count);
         }
+        //USE BOOL TO TELL IF TRUE
+        public static bool primeNum(int n)
+        {
+            for (int num = 3; (num * num) <= n; num += 2)
+            {
+                if(n % num != 0)
+                {
+                    return false;
+                }
+            }
+            if (n % 2 == 0)
+            {
+                return false;
+            }
 
+            return true;
+        }
         static int GetNumber()
         {
             int n = 0;
